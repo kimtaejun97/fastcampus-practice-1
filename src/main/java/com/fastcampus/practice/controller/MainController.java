@@ -12,11 +12,10 @@ public class MainController {
 
     private final StringSortService stringSortService;
 
-    public MainController(StringSortService stringSortService) {
+    @GetMapping("/sort")
         this.stringSortService = stringSortService;
     }
 
-    @GetMapping("/")
     public String main(@RequestParam List<String> list) {
         return stringSortService.doSort(list).toString();
     }
