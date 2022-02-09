@@ -1,4 +1,6 @@
 plugins {
+    id 'org.springframework.boot' version '2.6.3'
+    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
     id 'java'
 }
 
@@ -10,20 +12,12 @@ repositories {
 }
 
 dependencies {
-    compileOnly 'javax.servlet:javax.servlet-api:4.0.1'
-    compileOnly 'org.projectlombok:lombok:1.18.22'
-    annotationProcessor 'org.projectlombok:lombok:1.18.22'
-
-
-    implementation 'org.springframework.boot:spring-boot-starter-web:2.6.3'
-
-    testImplementation 'org.springframework.boot:spring-boot-starter-test:2.6.3'
-    testImplementation 'org.assertj:assertj-core:3.22.0'
-    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.2'
-    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.2'
-    testCompileOnly 'org.projectlombok:lombok:1.18.22'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    compileOnly 'org.projectlombok:lombok'
+    annotationProcessor 'org.projectlombok:lombok'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 
-test {
+tasks.named('test') {
     useJUnitPlatform()
 }
